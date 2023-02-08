@@ -1,0 +1,141 @@
+/*
+Regla CSS consta de 2 partes
+1) el selector ---------> es cualquier etiqueta a la que le vamos a aplicar estilos css
+2) Bloque de declaraciones: {
+atributo: valor;
+atributo-de-mas-de-dos-palabras: otro-valor;
+}
+*/
+
+@import url(otra-hoja.css); /* manera de llamar otra hoja en css. las import  son mala práctica, ya que son bloqueantes*/
+
+
+h1 {
+    color: greenyellow;
+    background-color: black;
+}
+
+
+/* links de referencias y documentación
+https://es.wikipedia.org/wiki/Hoja_de...
+https://www.w3.org/html/logo/
+https://www.w3.org/standards/webdesig...
+https://www.w3.org/TR/css-2020/
+https://developer.mozilla.org/es/docs...*/
+
+
+/*
+Selectores básicos 
+1) Etiquetas - son elementos html
+2) Identificadores - atributo id - #
+3) Clases - atributo class - .
+ */
+
+ p {
+    color: midnightblue;
+ }
+
+/*Los estilos con id, se considera un anti patrón, una mala práctica. cuando le ponemos id a una etiqueta, significa que ese id es único */
+ #parrafo-dos {
+    background-color: skyblue;
+ }
+ /* Dar estilos con clase nos permite reutilizar nuestro código CSS*/
+ 
+.bg-skyblue {
+    background-color: skyblue;
+}
+
+.bg-steelblue {
+    background-color: steelblue;
+}
+
+.text-20 {
+    font-size: 20px;
+ }
+
+.text-32 {
+    font-size: 32px;
+}
+
+.text-white {
+    color: white;
+}
+
+.hijos-directos > li {
+    background-color: thistle;
+}
+
+.hijos-descendientes b {
+    background-color: thistle;
+}
+/* los selectores hermanos van a aplicar a los elementos que son hermano sy que esten por debajo del elemento de referencia*/
+.hermanos-general ~ li {
+    background-color: thistle;
+}
+
+.hermanos-adyacentes + li {
+    background-color: thistle;
+}
+
+/*Selectores de atributos*/
+.selectores-atributos a[href] {
+    color: orangered;
+}
+
+.selectores-atributos a[target=¨_blank] {
+    font-weight: bold;
+}
+
+/*el comodin del * aplica el estilo si contiene la palabra en cuestión*/
+.selectores-atributos a[href*="jonmircha"] {
+    font-size: 24px;
+}
+
+/*el comodin del * aplica el estilo si contiene el texto en cuestión al inicio*/
+.selectores-atributos a[href^="http://"] {
+    text-decoration: none;
+}
+
+/*el comodin del $ aplica el estilo si contiene el texto en cuestión al final*/
+.selectores-atributos a[href$=".com"] {
+    background-color: black;
+}
+
+/*el comodin del ~ aplica el estilo si contiene el texto en cuestión en una lista separada por espacios*/
+.selectores-atributos a[class~="cursos"] {
+    background-color: midnightblue
+}
+
+/*el comodin del | aplica el estilo si contiene el texto en cuestión en una lista separada por espacios y que después del texto en cuestión venga un guion medio - */
+.selectores-atributos a[class|="menu"] {
+    font-style: italic;
+}
+
+/* Selector Universal*/
+* {
+    font-family: sans-serif;
+}
+
+.selector-universal * { /* Para aplicarle estilos a todoslos elementos que esten dentro de tu formulario */
+    font-size: 24px;
+}
+
+.form-pseudoclases *:required {
+    border-color: yellow;
+}
+
+.form-pseudoclases *:valid {
+    border-color: yellowgreen;
+}
+
+.form-pseudoclases *:invalid {
+    border-color: red;
+}
+
+.form-pseudoclases *:focus {
+    background-color: skyblue;
+}
+
+body {
+    background-color: black;
+}
